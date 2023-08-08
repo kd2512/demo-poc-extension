@@ -1,0 +1,24 @@
+{
+    "questions": [
+        {
+            "id": 1,
+            "question": "What is your name",
+            "answer": "I am ChatBot. Nice to meet you!"
+        },
+        {
+            "id": 2,
+            "question": "How does the weather look today",
+            "answer": "I'm sorry, but I don't have access to real-time weather data."
+        },
+        {
+            "id": 3,
+            "question": "Tell me a joke",
+            "answer": "I'm on a seafood diet. I see food and I eat it!"
+        },
+        {
+            "id": 4,
+            "question": "How to delete duplicates in an array",
+            "answer": "const numbers = [1, 2, 2, 3, 4, 4, 5];\nconst uniqueNumbers = Array.from(new Set(numbers));\nconsole.log(uniqueNumbers); // Output: [1, 2, 3, 4, 5]"
+        }
+    ]
+}

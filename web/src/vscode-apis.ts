@@ -6,18 +6,18 @@ export const vscodeAPIInstance =
     typeof acquireVsCodeApi === "function"
         ? acquireVsCodeApi()
         : {
-              postMessage: (e: any) => {
-                  if (e?.action) {
-                      if (e.promiseId) {
-                          if (e.action === "GET_INITIAL_VALUES") {
-                              promiseQueue[e.promiseId].resolve({ view: "getting-started" });
-                          }
-                      }
-                  }
-              },
-              postMessageAndWait: () => {},
-              onReply: () => {},
-          };
+            postMessage: (e: any) => {
+                if (e?.action) {
+                    if (e.promiseId) {
+                        if (e.action === "GET_INITIAL_VALUES") {
+                            promiseQueue[e.promiseId].resolve({ view: "getting-started" });
+                        }
+                    }
+                }
+            },
+            postMessageAndWait: () => { },
+            onReply: () => { },
+        };
 
 const promiseQueue: { [key: string]: any } = {};
 
@@ -50,9 +50,11 @@ const vscodeAPI = {
  *
  */
 
-const getInitialValues = async (): Promise<GlobalState> => {
+const getInitialValues = async () => {
     console.log("inside vscodeapi react, getInitialValue")
-    return (await vscodeAPI.postMessageAndWait({ action: "GET_INITIAL_VALUES", payload: {} })) as GlobalState;
+    const data = await vscodeAPI.postMessageAndWait({ action: "GET_INITIAL_VALUES", payload: {} }) as GlobalState;
+    console.log("data", data);
+    return data;
 };
 
 /**

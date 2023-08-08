@@ -4,7 +4,6 @@ import * as os from "os";
 import * as path from "path";
 
 function html(exPath: string,) {
-    console.log("inside html", path.join(exPath, "media", "index.html"));
     return fs.readFileSync(path.join(exPath, "media", "index.html"), {
         encoding: "utf-8",
     });
@@ -32,10 +31,15 @@ class ActivityBarWebview_1 implements vscode.WebviewViewProvider {
         console.log("insied message handler")
         switch (action) {
             case "GET_INITIAL_VALUES": {
-                console.log("inside getInitalvaiulsue")
-                this.webviewView?.webview.postMessage({
-                    view: ActivityBarWebview_1.viewType,
-                });
+                try {
+                    console.log("inside getInitalvaiulsue")
+                    this.webviewView?.webview.postMessage({
+                        promiseId: promiseId,
+                        view: ActivityBarWebview_1.viewType,
+                    });
+                } catch (e) {
+                    console.log("errror", e);
+                }
                 break;
             }
         }
