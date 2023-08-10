@@ -110,11 +110,11 @@
 .user-input-btn {
     padding: 0.5rem;
     border-radius: 0.4rem;
-    background-color: transparent;
+    background-color: #353740;
     cursor: pointer;
     color: white;
 }
 
 .user-input-btn:hover {
-    background-color: #353740;
+    background-color: #292a2f;
 }

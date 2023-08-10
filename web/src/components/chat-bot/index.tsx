@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import qaData from "../../qaData.json";
 import "./index.css";
-import icon from "../../botIcon.svg";
 import { FiSend } from "react-icons/fi";
 
 interface Message {
@@ -45,7 +44,7 @@ const ChatBot: React.FC = () => {
                         </div>
                         <div className="answer">
                             <div className="bot-icon">
-                                <img className="bot-image" src="https://github.com/imagekit-developer/imagekit-react/assets/55666140/337f2f71-9114-4679-90a5-6faf47a92632" />&nbsp;&nbsp;
+                                <img className="bot-image" alt="bot-icon" src="https://github.com/imagekit-developer/imagekit-react/assets/55666140/337f2f71-9114-4679-90a5-6faf47a92632" />&nbsp;&nbsp;
                                 <div style={{ fontWeight: "600" }}>Bot</div>
                             </div>
                             <div className="bot-ans">{message.question.trim().toLowerCase() === "How to delete duplicates in an array".trim().toLowerCase() ? (
